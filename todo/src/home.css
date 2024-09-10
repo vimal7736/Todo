@@ -1,7 +1,6 @@
-/* Basic Styling */
 body {
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom right, #1e3c72, #2a5298);
     margin: 0;
     padding: 0;
     color: #fff;
@@ -9,21 +8,35 @@ body {
 
 h2 {
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-top: 20px;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    font-weight: 600;
+}
+
+.maincont {
+    margin: 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .container {
-    width: 90%;
-    margin: 0 auto;
-    max-width: 600px;
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
+    width: 45%;
+    margin-top: 50px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
 }
 
 ul {
@@ -31,44 +44,54 @@ ul {
     padding: 0;
 }
 
-/* Todo Item Styling */
 li {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.9);
     color: #333;
     margin: 15px 0;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     display: flex;
     justify-content: space-between;
     align-items: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+
+
+li:hover::before {
+    width: 100%;
 }
 
 li:hover {
     transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 li h3 {
     margin: 0;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: #333;
 }
 
-/* Button Styling */
 button {
     border: none;
-    padding: 10px 15px;
+    padding: 10px 20px;
     border-radius: 8px;
     cursor: pointer;
     font-size: 14px;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(45deg, #2193b0, #6dd5ed);
+    color: white;
+    text-transform: uppercase;
 }
 
 button:hover {
     transform: translateY(-3px);
+    background: linear-gradient(45deg, #6dd5ed, #2193b0);
 }
 
 button:focus {
@@ -76,18 +99,15 @@ button:focus {
 }
 
 button.done {
-    background-color: #4caf50;
-    color: white;
+    background: linear-gradient(45deg, #43cea2, #185a9d);
 }
 
 button.not-done {
-    background-color: #9c27b0;
-    color: white;
+    background: linear-gradient(45deg, #f093fb, #f5576c);
 }
 
 button.delete {
-    background-color: #f44336;
-    color: white;
+    background: linear-gradient(45deg, #ff4e50, #f9d423);
     margin-left: 10px;
 }
 

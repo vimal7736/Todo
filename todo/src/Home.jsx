@@ -28,18 +28,28 @@ const Home = () => {
             .catch(err => console.error(err));
     };
 
+    const pendingTodos = todos.filter(todo => !todo.done);
+    const completedTodos = todos.filter(todo => todo.done);
+
     return (
+        <div>
+
+            <h2>Task Manager</h2>
+    <div className='maincont'>
+
         <div className="container">
             <h2>Todo List</h2>
             <Create fetchTodos={fetchTodos} />
-            {todos.length === 0 ? <h2>No tasks available</h2> : (
+            {pendingTodos.length === 0 ? (
+                <h2>No tasks available</h2>
+            ) : (
                 <ul>
-                    {todos.map(todo => (
-                        <li key={todo._id} style={{ textDecoration: todo.done ? 'line-through' : 'none' }}>
+                    {pendingTodos.map(todo => (
+                        <li key={todo._id}>
                             <h3>{todo.task}</h3>
                             <div>
                                 <button 
-                                    onClick={() => handleEdit(todo._id)}
+                                    onClick={() => handleEdit(todo._id)} 
                                     className={todo.done ? 'done' : 'not-done'}
                                 >
                                     {todo.done ? 'Completed' : 'Done'}
@@ -56,7 +66,33 @@ const Home = () => {
                 </ul>
             )}
         </div>
-    );
+
+        <div className="container">
+            <h2>Completed List</h2>
+            {completedTodos.length === 0 ? (
+                <h2>No completed tasks</h2>
+            ) : (
+                <ul>
+                    {completedTodos.map(todo => (
+                        <li key={todo._id} style={{ textDecoration: 'line-through' }}>
+                            <h3>{todo.task}</h3>
+                            <div>
+                                <button 
+                                    onClick={() => handleDelete(todo._id)} 
+                                    className="delete"
+                                >
+                                    Delete
+                                </button>
+                            </div>
+                        </li>
+                    ))}
+                </ul>
+            )}
+        </div>
+    </div>
+        </div>
+);
+
 };
 
 export default Home;
