@@ -5,7 +5,7 @@ const Create = ({fetchTodos}) => {
     const [task, setTask] = useState('');
 
     const handleAdd = () => {
-        axios.post('http://localhost:3001/add', { task })
+        axios.post('https://todo-e8br.vercel.app/add', { task })
             .then(response => {
                 console.log("Task added:", response.data);
                 setTask(''); 

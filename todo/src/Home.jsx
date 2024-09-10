@@ -11,19 +11,19 @@ const Home = () => {
     }, []);
 
     const fetchTodos = () => {
-        axios.get("http://localhost:3001/get")
+        axios.get("https://todo-e8br.vercel.app/get")
             .then(result => setTodos(result.data))
             .catch(err => console.error(err));
     };
 
     const handleDelete = (id) => {
-        axios.delete(`http://localhost:3001/delete/${id}`)
+        axios.delete(`https://todo-e8br.vercel.app/delete/${id}`)
             .then(() => fetchTodos())
             .catch(err => console.error(err));
     };
 
     const handleEdit = (id) => {
-        axios.put(`http://localhost:3001/update/${id}`)
+        axios.put(`https://todo-e8br.vercel.app/update/${id}`)
             .then(() => fetchTodos())
             .catch(err => console.error(err));
     };
