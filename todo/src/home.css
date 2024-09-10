@@ -1,0 +1,111 @@
+/* Basic Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Todo Item Styling */
+li {
+    background-color: #fff;
+    color: #333;
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+li h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Button Styling */
+button {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    transform: translateY(-3px);
+}
+
+button:focus {
+    outline: none;
+}
+
+button.done {
+    background-color: #4caf50;
+    color: white;
+}
+
+button.not-done {
+    background-color: #9c27b0;
+    color: white;
+}
+
+button.delete {
+    background-color: #f44336;
+    color: white;
+    margin-left: 10px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    animation: fadeIn 1s ease-out;
+}
+
+li {
+    animation: fadeIn 0.8s ease-out;
+}
